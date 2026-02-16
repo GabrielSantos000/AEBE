@@ -1,0 +1,56 @@
+html{
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-content: center;
+}
+
+body {
+    display: flexbox;
+    text-align: center;
+    justify-items: center;
+    background-image: linear-gradient(0.35turn, #000000,#ff4800,#ffae00);
+}
+
+.box {
+    display: flexbox;
+    align-content: center;
+    justify-self:center;
+    justify-items: center;
+    border: 1px solid #ccc;
+    background-color: antiquewhite;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 320px;
+    padding: 10px;
+}
+
+.input {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    overflow: hidden;
+    width: 100%;
+    outline: none;
+    }
+
+.input .icon {
+    background-color: #cacaca;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+    
+.button {
+    align-self: center;
+    justify-self: center;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.button:hover{
+    background-color: rgb(255, 102, 0);
+}
+

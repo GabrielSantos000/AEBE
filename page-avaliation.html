@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Avaliação Eletrônica de Bem Estar</title>
+    <link href="styleAvaliation.css" rel="stylesheet">
+</head>
+<body>
+    <h1>Avaliação Eletrônica de Bem Estar<br>com Bioimpedância</h1>
+    <div class="info-person">
+        <div>
+            <input title="nome" type="text" placeholder="Nome do aluno" required>
+            <input type="datetime" placeholder="data" required>
+        </div>
+        <div>
+            <input id="idade" type="number" placeholder="Idade" required>
+            <input id="altura" type="number" placeholder="Altura" required>
+            <input id="peso" type="number" placeholder="Peso" required>
+            <input id="sexo" type="text" placeholder="Sexo" required>
+            <input type="number" placeholder="Cintura">
+        </div>
+        <div>
+            <input type="number" placeholder="Telefone" required>
+            <input type="text" placeholder="E-mail">
+        </div>           
+    </div>
+    <!-- Tabela IMC-->
+    <div class="IMC">
+        <table id="imc-table" border="1">
+            <thead>
+                <tr>
+                    <th>Faixa IMC</th>
+                    <th>Classificação</th>
+                    <th>Barra IMC</th>
+                    <th>Avaliação IMC</th>
+                </tr>
+                <tr>
+                    <th>Menos de 18,5</th>
+                    <td>Abaixo do peso</td>
+                    <td>
+                        <progress id="barra" value="6.5" max="78"></progress><br>
+                        <progress id="barra" value="13" max="78"></progress><br>
+                        <progress id="barra" value="19.5" max="78"></progress>
+                    </td>
+                    <td>
+                        7,0 - 10,7<br>
+                        10,8 - 14,5<br>
+                        14,6 - 18,4
+                    </td>
+                <tr>
+                    <th>Entre 18,5 e 25</th>
+                    <td>Normal</td>
+                    <td>
+                        <progress id="barra" value="26" max="78"></progress><br>
+                        <progress id="barra" value="32.5" max="78"></progress><br>
+                        <progress id="barra" value="39" max="78"></progress>
+                    </td>
+                    <td>
+                        18,5 - 20,5<br>
+                        20,6 - 22,7<br>
+                        22,8 - 24,9
+                    </td>
+                </tr>
+                <tr>
+                    <th>Entre 25 e 30</th>
+                    <td>Sobrepeso</td>
+                    <td>
+                        <progress id="barra" value="45.5" max="78"></progress><br>
+                        <progress id="barra" value="52" max="78"></progress><br>
+                        <progress id="barra" value="58.5" max="78"></progress>
+                    </td>                    
+                    <td>
+                        25,0 - 26,5<br>
+                        26,6 - 28,2<br>
+                        28,3 - 29,9
+                    </td>
+                </tr>
+                <tr>
+                    <th>Maior que 30</th>
+                    <td>Obeso</td>
+                    <td>
+                        <progress id="barra" value="65" max="78"></progress><br>
+                        <progress id="barra" value="71.5" max="78"></progress><br>
+                        <progress id="barra" value="78" max="78"></progress>
+                    </td>                    
+                    <td>
+                        30,0 - 34,9<br>
+                        35,0 - 39,9<br>
+                        40,0 - 90,0
+                    </td>
+                </tr>
+            </thead>
+        </table>
+        <table id="imc-user" border="1">
+            <thead>
+                <tr>
+                    <th>Índice de Massa Corporal - IMC(BMI)</th>
+                </tr>
+                <tr>
+                    <td>(IMC do aluno)</td>
+                </tr>
+            </thead>
+        </table>
+        <table id="body-fat" border="1">
+            <thead>
+                <tr>
+                    <th>Gênero</th>
+                    <th>Idade</th>
+                    <th>Baixo</th>
+                    <th>Normal</th>
+                    <th>Alto</th>
+                    <th>Muito Alto</th>
+                </tr>
+                <tr>
+                    <th>Feminio</th>
+                    <td>
+                        20-39<br>
+                        40-59<br>
+                        60-79
+                    </td>
+                    <td>
+                        Abaixo de 21.0<br>
+                        Abaixo de 23.0<br>
+                        Abaixo de 24.0<br>
+                    </td>
+                    <td>
+                        21.0 - 32.9<br>
+                        23.0 - 33.9<br>
+                        24.0 - 35.9<br>
+                    </td>
+                    <td>
+                        33.0 - 38.9<br>
+                        34.0 - 39.9<br>
+                        36.0 - 41.9<br>
+                    </td>
+                    <td>
+                        Maior que 39.0<br>
+                        Maior que 40.0<br>
+                        Maior que 42.0<br>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Masculino</th>
+                    <td>
+                        20-39<br>
+                        40-59<br>
+                        60-79
+                    </td>
+                    <td>
+                        Abaixo de 8.0<br>
+                        Abaixo de 11.0<br>
+                        Abaixo de 13.0<br>
+                    </td>
+                    <td>
+                        8.0 - 19.9<br>
+                        11.0 - 21.9<br>
+                        13.0 - 24.9<br>
+                    </td>
+                    <td>
+                        20.0 - 24.9<br>
+                        22.0 - 27.9<br>
+                        25.0 - 29.9<br>
+                    </td>
+                    <td>
+                        Maior que 25.0<br>
+                        Maior que 28.0<br>
+                        Maior que 30.0<br>
+                    </td>
+                </tr>
+            </thead>
+        </table>
+        <table id="bodyfat-user" border="1">
+            <thead>
+                <tr>
+                    <th>Percentual de gordura corporal</th>
+                </tr>
+                <tr>
+                    <td>(Body Fat do aluno)</td>
+                </tr>
+            </thead>
+        </table>
+        <table id="muscle-table" border="1">
+            <thead>
+                <tr>
+                    <th>Gênero</th>
+                    <th>Idade</th>
+                    <th>Baixo</th>
+                    <th>Normal</th>
+                    <th>Alto</th>
+                    <th>Muito Alto</th>
+                </tr>
+                <tr>
+                    <th>Feminio</th>
+                    <td>
+                        20-39<br>
+                        40-59<br>
+                        60-79
+                    </td>
+                    <td>
+                        Abaixo de 21.0<br>
+                        Abaixo de 23.0<br>
+                        Abaixo de 24.0<br>
+                    </td>
+                    <td>
+                        21.0 - 32.9<br>
+                        23.0 - 33.9<br>
+                        24.0 - 35.9<br>
+                    </td>
+                    <td>
+                        33.0 - 38.9<br>
+                        34.0 - 39.9<br>
+                        36.0 - 41.9<br>
+                    </td>
+                    <td>
+                        Maior que 39.0<br>
+                        Maior que 40.0<br>
+                        Maior que 42.0<br>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Masculino</th>
+                    <td>
+                        20-39<br>
+                        40-59<br>
+                        60-79
+                    </td>
+                    <td>
+                        Abaixo de 8.0<br>
+                        Abaixo de 11.0<br>
+                        Abaixo de 13.0<br>
+                    </td>
+                    <td>
+                        8.0 - 19.9<br>
+                        11.0 - 21.9<br>
+                        13.0 - 24.9<br>
+                    </td>
+                    <td>
+                        20.0 - 24.9<br>
+                        22.0 - 27.9<br>
+                        25.0 - 29.9<br>
+                    </td>
+                    <td>
+                        Maior que 25.0<br>
+                        Maior que 28.0<br>
+                        Maior que 30.0<br>
+                    </td>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    
+</body>
+</html>
