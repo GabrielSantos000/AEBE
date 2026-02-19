@@ -1,0 +1,126 @@
+html{
+    font-family:Arial, Helvetica, sans-serif;
+    background-color: rgb(247, 247, 247);
+    width: 100%;
+    height: 100%;
+    margin: 0%;
+    padding: 0%;
+}
+
+header ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-image: linear-gradient(135deg, rgb(239, 255, 92) 40%, rgb(255, 86, 86))
+}
+
+.info-person {
+    padding-bottom: 10px;
+}
+
+.info-person input {
+    padding: 5px;
+    margin: 3px;
+}
+
+#imc-table {
+    background-color: aliceblue;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+#imc-table th {
+    padding: 10px;
+    background-color: rgb(255, 136, 0);
+}
+
+#barra {
+    background-color: black
+}
+
+#body-fat {
+    background-color: aliceblue;
+    text-align: center;
+    margin-bottom: 15px;
+    border: 0px;
+}
+
+#body-fat th {
+    padding: 10px;
+    background-color: rgb(255, 217, 0);
+}
+
+#muscle-table {
+    background-color: aliceblue;
+    text-align: center;
+    margin-bottom: 15px;
+    border: 0px;
+}
+
+#muscle-table th {
+    padding: 10px;
+    background-color: rgb(123, 255, 0);
+}
+
+#visceral-fat-table {
+    background-color: aliceblue;
+    text-align: center;
+    margin-bottom: 15px;
+    border: 0px;
+}
+
+#visceral-fat-table th{
+    padding: 10px;
+    background-color: rgb(99, 162, 255);
+}
+
+#RM {
+    background-color: aliceblue;
+    text-align: center;
+    margin-bottom: 15px;
+    border: 0px;
+}
+
+#RM th{
+    padding: 10px;
+    background-color: aquamarine;
+}
+
+.perimetria{
+    margin-bottom: 25px;
+}
+
+.perimetria th{
+    padding: 10px;
+    background-color: rgb(212, 85, 0);
+}
+
+.info-add {
+    text-align: right;
+}
+
+footer{
+    display: flex;
+    padding: 20px;
+    justify-content: space-around;
+}
+
+footer button{
+    border-radius: 20px;
+    padding: 10px;
+    background-color: rgb(228, 228, 228);
+    border: none;
+}
+
+#cancel:hover{
+    transition: 500ms;
+    background-color: rgb(167, 53, 53);
+    color: white;
+    font-style: bold;
+}
+#final:hover{
+    transition: 500ms;
+    background-color: rgb(53, 167, 53);
+    color: white;
+    font-style: bold;
+}

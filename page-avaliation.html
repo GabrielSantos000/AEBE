@@ -7,7 +7,16 @@
     <link href="styleAvaliation.css" rel="stylesheet">
 </head>
 <body>
-    <h1>Avaliação Eletrônica de Bem Estar<br>com Bioimpedância</h1>
+    <header>
+        <nav id="barra-nav">
+            <ul>
+                <a href=""><img src="icons\house-fill.svg" alt="home"></a>
+                <h2 align="center">Avaliação Eletrônica de Bem Estar<br>com Bioimpedância</h2>
+                <a href=""><img src="icons\person-circle.svg" alt="perfil"></a>
+            </ul>
+        </nav>
+    </header>
+    <h1 align="center">Dados da avaliação</h1>
     <div class="info-person">
         <div>
             <input title="nome" type="text" placeholder="Nome do aluno" required>
@@ -27,15 +36,16 @@
     </div>
     <!-- Tabela IMC-->
     <div class="IMC">
-        <table id="imc-table" border="1">
+        <table id="imc-table" border="0">
             <thead>
                 <tr>
                     <th>Faixa IMC</th>
                     <th>Classificação</th>
                     <th>Barra IMC</th>
                     <th>Avaliação IMC</th>
+                    <th>IMC Aluno</th>
                 </tr>
-                <tr>
+                <tr id="imc-table-line1">
                     <th>Menos de 18,5</th>
                     <td>Abaixo do peso</td>
                     <td>
@@ -48,7 +58,9 @@
                         10,8 - 14,5<br>
                         14,6 - 18,4
                     </td>
-                <tr>
+                    <td rowspan="4"><input id="data-imc-user" placeholder="IMC do aluno" type="number"></td>
+                    
+                <tr id="imc-table-line2">
                     <th>Entre 18,5 e 25</th>
                     <td>Normal</td>
                     <td>
@@ -62,7 +74,7 @@
                         22,8 - 24,9
                     </td>
                 </tr>
-                <tr>
+                <tr id="imc-table-line3">
                     <th>Entre 25 e 30</th>
                     <td>Sobrepeso</td>
                     <td>
@@ -76,7 +88,7 @@
                         28,3 - 29,9
                     </td>
                 </tr>
-                <tr>
+                <tr id="imc-table-line4">
                     <th>Maior que 30</th>
                     <td>Obeso</td>
                     <td>
@@ -92,28 +104,24 @@
                 </tr>
             </thead>
         </table>
-        <table id="imc-user" border="1">
-            <thead>
-                <tr>
-                    <th>Índice de Massa Corporal - IMC(BMI)</th>
-                </tr>
-                <tr>
-                    <td>(IMC do aluno)</td>
-                </tr>
-            </thead>
-        </table>
+    </div>
+    <div class="BODYFAT">
         <table id="body-fat" border="1">
             <thead>
                 <tr>
+                    <th colspan="7">Percentual de Gordura Corporal (BODY FAT)</th>
+                </tr>
+                <tr>
                     <th>Gênero</th>
                     <th>Idade</th>
                     <th>Baixo</th>
                     <th>Normal</th>
                     <th>Alto</th>
                     <th>Muito Alto</th>
+                    <th>Percentual do aluno</th>
                 </tr>
-                <tr>
-                    <th>Feminio</th>
+                <tr id="bodyfat-table-line1">
+                    <th>Feminino</th>
                     <td>
                         20-39<br>
                         40-59<br>
@@ -139,86 +147,9 @@
                         Maior que 40.0<br>
                         Maior que 42.0<br>
                     </td>
+                    <td rowspan="2"><input id="per-fat-user" placeholder="Percentual de gordura do aluno" type="number"></td>
                 </tr>
-                <tr>
-                    <th>Masculino</th>
-                    <td>
-                        20-39<br>
-                        40-59<br>
-                        60-79
-                    </td>
-                    <td>
-                        Abaixo de 8.0<br>
-                        Abaixo de 11.0<br>
-                        Abaixo de 13.0<br>
-                    </td>
-                    <td>
-                        8.0 - 19.9<br>
-                        11.0 - 21.9<br>
-                        13.0 - 24.9<br>
-                    </td>
-                    <td>
-                        20.0 - 24.9<br>
-                        22.0 - 27.9<br>
-                        25.0 - 29.9<br>
-                    </td>
-                    <td>
-                        Maior que 25.0<br>
-                        Maior que 28.0<br>
-                        Maior que 30.0<br>
-                    </td>
-                </tr>
-            </thead>
-        </table>
-        <table id="bodyfat-user" border="1">
-            <thead>
-                <tr>
-                    <th>Percentual de gordura corporal</th>
-                </tr>
-                <tr>
-                    <td>(Body Fat do aluno)</td>
-                </tr>
-            </thead>
-        </table>
-        <table id="muscle-table" border="1">
-            <thead>
-                <tr>
-                    <th>Gênero</th>
-                    <th>Idade</th>
-                    <th>Baixo</th>
-                    <th>Normal</th>
-                    <th>Alto</th>
-                    <th>Muito Alto</th>
-                </tr>
-                <tr>
-                    <th>Feminio</th>
-                    <td>
-                        20-39<br>
-                        40-59<br>
-                        60-79
-                    </td>
-                    <td>
-                        Abaixo de 21.0<br>
-                        Abaixo de 23.0<br>
-                        Abaixo de 24.0<br>
-                    </td>
-                    <td>
-                        21.0 - 32.9<br>
-                        23.0 - 33.9<br>
-                        24.0 - 35.9<br>
-                    </td>
-                    <td>
-                        33.0 - 38.9<br>
-                        34.0 - 39.9<br>
-                        36.0 - 41.9<br>
-                    </td>
-                    <td>
-                        Maior que 39.0<br>
-                        Maior que 40.0<br>
-                        Maior que 42.0<br>
-                    </td>
-                </tr>
-                <tr>
+                <tr id="bodyfat-table-line2">
                     <th>Masculino</th>
                     <td>
                         20-39<br>
@@ -249,6 +180,273 @@
             </thead>
         </table>
     </div>
-    
+    <div class="MUSCLE">
+        <table id="muscle-table" border="1">
+            <thead>
+                <tr>
+                    <th>Gênero</th>
+                    <th>Idade</th>
+                    <th>Baixo</th>
+                    <th>Normal</th>
+                    <th>Alto</th>
+                    <th>Muito Alto</th>
+                    <th>Percentual do aluno</th>
+                </tr>
+                <tr>
+                    <th>Feminino</th>
+                    <td>
+                        18-39<br>
+                        40-59<br>
+                        60-80
+                    </td>
+                    <td>
+                        Abaixo de 24.3<br>
+                        Abaixo de 24.1<br>
+                        Abaixo de 23.9<br>
+                    </td>
+                    <td>
+                        24.3 - 30.3<br>
+                        24.1 - 30.1<br>
+                        23.9 - 29.9<br>
+                    </td>
+                    <td>
+                        30.4 - 35.3<br>
+                        30.2 - 35.1<br>
+                        30.0 - 34.9<br>
+                    </td>
+                    <td>
+                        Maior que 35.4<br>
+                        Maior que 35.2<br>
+                        Maior que 35.0<br>
+                    </td>
+                    <td rowspan="2"><input id="per-muscle-user" placeholder="Percentual de músculo do aluno" type="number"></td>
+                </tr>
+                <tr>
+                    <th>Masculino</th>
+                    <td>
+                        18-39<br>
+                        40-59<br>
+                        60-80
+                    </td>
+                    <td>
+                        Abaixo de 33.3<br>
+                        Abaixo de 33.1<br>
+                        Abaixo de 32.9<br>
+                    </td>
+                    <td>
+                        33.3 - 39.3<br>
+                        33.1 - 39.1<br>
+                        32.9 - 38.9<br>
+                    </td>
+                    <td>
+                        34.9 - 44.0<br>
+                        39.2 - 43.8<br>
+                        39.0 - 43.6<br>
+                    </td>
+                    <td>
+                        Maior que 44.1<br>
+                        Maior que 43.9<br>
+                        Maior que 43.7<br>
+                    </td>
+                </tr>
+            </thead>
+        </table>
+    </div>
+
+    <div class="gordura-visceral">
+        <table id="visceral-fat-table" border="1">
+            <thead>
+                <tr>
+                    <th colspan="4">Classificação do Nível de Gordura Visceral</th>
+                </tr>
+            </thead>
+            <thead>
+                <tr>
+                    <th>Nível Normal</th>
+                    <th>Nível Alto</th>
+                    <th> Nível Muito Alto</th>
+                    <th>Classificação do Aluno</th>
+                </tr>
+                <tr>
+                    <td>Menor ou igual a 9</td>
+                    <td>Entre 10 e 14</td>
+                    <td>Maior ou igual a 15</td>
+                    <td><input type="number" placeholder="Gordura visceral do Aluno"></td>
+                </tr>
+            </thead>
+        </table>
+
+    <div class="Metabolismo">
+        <table id="RM" border="1">
+            <thead>
+                <tr>
+                    <th>Metabolismo em Repouso do aluno</th>
+                    <td><input type="number" placeholder="RM do Aluno"></td>
+                </tr>
+                <tr>
+                    <th>Idade Biológica</th>
+                    <td><input type="number" placeholder="Idade biológica do aluno"></td>
+                </tr>
+            </thead>
+        </table>
+    </div>
+        <p align="justify">
+        O Metabolismo em Repouso ou Taxa Metabolica Basal (TMB) é o mínimo de energia necessária para manter as funções do organismo em repouso, como os batimentos cardiacos, a pressão arterial, a respiração e a manutenção da temperatura corporal. Para perder peso, sua ingestão calórica deve ser igual ou maior que a TMB, mas menor que seu gasto calórico total.
+        </p>
+    </div>
+
+    <!--PERIMETRIA-->
+    <div class="perimetria" align=center>
+        <h1>PERÍMETRIA</h1>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Perímetria</th>
+                    <th>Medidas</th>
+                </tr>
+                <tr>
+                    <th>Pescoço</th>
+                    <td><input type="number" placeholder="Pescoço"></td>
+                </tr>
+                <tr>
+                    <th>Ombro</th>
+                    <td><input type="number" placeholder="Ombro"></td>
+                </tr>
+                <tr>
+                    <th>Tórax</th>
+                    <td><input type="number" placeholder="Toráx"></td>
+                </tr>
+                <tr>
+                    <th>Braço Direito Relaxado</th>
+                    <td><input type="number" placeholder="Braço Direito Relaxado"></td>
+                </tr>
+                <tr>
+                    <th>Braço Direito Contraído</th>
+                    <td><input type="number" placeholder="Braço Direito Contraído"></td>
+                </tr>
+                <tr>
+                    <th>Braço Esquerdo Relaxado</th>
+                    <td><input type="number" placeholder="Braço Esquerdo Relaxado"></td>
+                </tr>
+                <tr>
+                    <th>Braço Esquerdo Contraído</th>
+                    <td><input type="number" placeholder="Braço Esquerdo Contraído"></td>
+                </tr>
+                <tr>
+                    <th>Antebraço Direito</th>
+                    <td><input type="number" placeholder="Antebraço Direito"></td>
+                </tr>
+                <tr>
+                    <th>Antebraço Esquerdo</th>
+                    <td><input type="number" placeholder="Antebraço Esquerdo"></td>
+                </tr>
+                <tr>
+                    <th>Cintura</th>
+                    <td><input type="number" placeholder="Cintura"></td>
+                </tr>
+                <tr>
+                    <th>Abdômen</th>
+                    <td><input type="number" placeholder="Abdômen"></td>
+                </tr>
+                <tr>
+                    <th>Quadril</th>
+                    <td><input type="number" placeholder="Quadril"></td>
+                </tr>
+                <tr>
+                    <th>Coxa Proximal Direita</th>
+                    <td><input type="number" placeholder="Coxa Proximal Direita"></td>
+                </tr>
+                <tr>
+                    <th>Coxa Proximal Esquerda</th>
+                    <td><input type="number" placeholder="Coxa Proximal Esquerda"></td>
+                </tr>
+                <tr>
+                    <th>Coxa Média Direita</th>
+                    <td><input type="number" placeholder="Coxa Média Direita"></td>
+                </tr>
+                <tr>
+                    <th>Coxa Média Esquerda</th>
+                    <td><input type="number" placeholder="Coxa Média Esquerda"></td>
+                </tr>
+                <tr>
+                    <th>Coxa Distal Direita</th>
+                    <td><input type="number" placeholder="Coxa Distal Esquerda"></td>
+                </tr>
+                <tr>
+                    <th>Coxa Distal Esquerda</th>
+                    <td><input type="number" placeholder="Coxa Distal Esquerda"></td>
+                </tr>
+                <tr>
+                    <th>Panturrilha Direita</th>
+                    <td><input type="number" placeholder="Panturrilha Direita"></td>
+                </tr>
+                <tr>
+                    <th>Panturrilha Esquerda</th>
+                    <td><input type="number" placeholder="Panturrilha Esquerda"></td>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    <div class="info-add">
+        <table>
+            <tr>
+                <th>Instrutor Responsável</th>
+                <td>
+                    <select>
+                        <option>Instrutor 1</option>
+                        <option>Instrutor 2</option>
+                        <option>Instrutor 3</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>Nível de atividade</th>
+                <td><input type="text" placeholder="iniciante, médio, atleta,..."></td>
+            </tr>
+            <tr>
+                <th>Histórico Médico Pessoal</th>
+                <td><input type="text" placeholder="Quebrei um braço, fiz cirurgia,..."></td>
+            </tr>
+            <tr>
+                <th>Dores e Lesões</th>
+                <td><input type="text" placeholder="Dor na perna, lesão no braço,..."></td>
+            </tr>
+            <tr>
+                <th>Objetivo</th>
+                <td><input type="text" placeholder="Saúde, Emagrecer, Estética,..."></td>
+            </tr>
+            <tr>
+                <th>Fuma?</th>
+                <td>
+                    <select>
+                        <option value="Sim">Sim</option>
+                        <option value="Não">Não</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>Alimentação</th>
+                <td><input type="text" placeholder="Vegetariano, Como bem,..."></td>
+                <th>Quantas refeições?
+                    <select>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                    </select>
+                </th>
+            </tr>
+            <tr>
+                <th>Dicas para a criação do Treino</th>
+                <td><input type="text" placeholder="Focar mais em superiores,..."></td>
+            </tr>
+        </table>
+    </div>
+    <footer align="center">
+        <a href=""><button id="cancel">Cancelar</button></a>
+        <a href=""><button id="final">Finalizar Avaliação</button></a>
+    </footer>
 </body>
 </html>
