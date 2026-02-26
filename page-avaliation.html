@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=, initial-scale=1.0">
     <title>Avaliação Eletrônica de Bem Estar</title>
     <link href="styleAvaliation.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="script.js"></script>
 </head>
 <body>
     <header>
@@ -16,8 +18,8 @@
             </ul>
         </nav>
     </header>
-    <h1 align="center">Dados da avaliação</h1>
     <div class="info-person">
+        <h1 align="center">Dados da avaliação</h1>
         <div>
             <input title="nome" type="text" placeholder="Nome do aluno" required>
             <input type="datetime" placeholder="data" required>
@@ -36,7 +38,7 @@
     </div>
     <!-- Tabela IMC-->
     <div class="IMC">
-        <table id="imc-table" border="0">
+        <table id="imc-table">
             <thead>
                 <tr>
                     <th>Faixa IMC</th>
@@ -106,7 +108,7 @@
         </table>
     </div>
     <div class="BODYFAT">
-        <table id="body-fat" border="1">
+        <table id="body-fat">
             <thead>
                 <tr>
                     <th colspan="7">Percentual de Gordura Corporal (BODY FAT)</th>
@@ -181,7 +183,7 @@
         </table>
     </div>
     <div class="MUSCLE">
-        <table id="muscle-table" border="1">
+        <table id="muscle-table">
             <thead>
                 <tr>
                     <th>Gênero</th>
@@ -254,7 +256,7 @@
     </div>
 
     <div class="gordura-visceral">
-        <table id="visceral-fat-table" border="1">
+        <table id="visceral-fat-table">
             <thead>
                 <tr>
                     <th colspan="4">Classificação do Nível de Gordura Visceral</th>
@@ -277,7 +279,7 @@
         </table>
 
     <div class="Metabolismo">
-        <table id="RM" border="1">
+        <table id="RM">
             <thead>
                 <tr>
                     <th>Metabolismo em Repouso do aluno</th>
@@ -296,9 +298,9 @@
     </div>
 
     <!--PERIMETRIA-->
-    <div class="perimetria" align=center>
+    <div class="perimetria" id="container3D" align=center>
         <h1>PERÍMETRIA</h1>
-        <table border="1">
+        <table>
             <thead>
                 <tr>
                     <th>Perímetria</th>
@@ -306,83 +308,83 @@
                 </tr>
                 <tr>
                     <th>Pescoço</th>
-                    <td><input type="number" placeholder="Pescoço"></td>
+                    <td><input id="pescoco" type="number" placeholder="Pescoço"></td>
                 </tr>
                 <tr>
                     <th>Ombro</th>
-                    <td><input type="number" placeholder="Ombro"></td>
+                    <td><input id="ombro" type="number" placeholder="Ombro"></td>
                 </tr>
                 <tr>
                     <th>Tórax</th>
-                    <td><input type="number" placeholder="Toráx"></td>
+                    <td><input id="torax" type="number" placeholder="Toráx"></td>
                 </tr>
                 <tr>
                     <th>Braço Direito Relaxado</th>
-                    <td><input type="number" placeholder="Braço Direito Relaxado"></td>
+                    <td><input id="bracodr" type="number" placeholder="Braço Direito Relaxado"></td>
                 </tr>
                 <tr>
                     <th>Braço Direito Contraído</th>
-                    <td><input type="number" placeholder="Braço Direito Contraído"></td>
+                    <td><input id="bracodc" type="number" placeholder="Braço Direito Contraído"></td>
                 </tr>
                 <tr>
                     <th>Braço Esquerdo Relaxado</th>
-                    <td><input type="number" placeholder="Braço Esquerdo Relaxado"></td>
+                    <td><input id="bracoer" type="number" placeholder="Braço Esquerdo Relaxado"></td>
                 </tr>
                 <tr>
                     <th>Braço Esquerdo Contraído</th>
-                    <td><input type="number" placeholder="Braço Esquerdo Contraído"></td>
+                    <td><input id="bracoec" type="number" placeholder="Braço Esquerdo Contraído"></td>
                 </tr>
                 <tr>
                     <th>Antebraço Direito</th>
-                    <td><input type="number" placeholder="Antebraço Direito"></td>
+                    <td><input id="antebracod" type="number" placeholder="Antebraço Direito"></td>
                 </tr>
                 <tr>
                     <th>Antebraço Esquerdo</th>
-                    <td><input type="number" placeholder="Antebraço Esquerdo"></td>
+                    <td><input id="antebracoe" type="number" placeholder="Antebraço Esquerdo"></td>
                 </tr>
                 <tr>
                     <th>Cintura</th>
-                    <td><input type="number" placeholder="Cintura"></td>
+                    <td><input id="cintura" type="number" placeholder="Cintura"></td>
                 </tr>
                 <tr>
                     <th>Abdômen</th>
-                    <td><input type="number" placeholder="Abdômen"></td>
+                    <td><input id="abdomen" type="number" placeholder="Abdômen"></td>
                 </tr>
                 <tr>
                     <th>Quadril</th>
-                    <td><input type="number" placeholder="Quadril"></td>
+                    <td><input id="quadril" type="number" placeholder="Quadril"></td>
                 </tr>
                 <tr>
                     <th>Coxa Proximal Direita</th>
-                    <td><input type="number" placeholder="Coxa Proximal Direita"></td>
+                    <td><input id="coxapd" type="number" placeholder="Coxa Proximal Direita"></td>
                 </tr>
                 <tr>
                     <th>Coxa Proximal Esquerda</th>
-                    <td><input type="number" placeholder="Coxa Proximal Esquerda"></td>
+                    <td><input id="coxape" type="number" placeholder="Coxa Proximal Esquerda"></td>
                 </tr>
                 <tr>
                     <th>Coxa Média Direita</th>
-                    <td><input type="number" placeholder="Coxa Média Direita"></td>
+                    <td><input id="coxamd" type="number" placeholder="Coxa Média Direita"></td>
                 </tr>
                 <tr>
                     <th>Coxa Média Esquerda</th>
-                    <td><input type="number" placeholder="Coxa Média Esquerda"></td>
+                    <td><input id="coxame" type="number" placeholder="Coxa Média Esquerda"></td>
                 </tr>
                 <tr>
                     <th>Coxa Distal Direita</th>
-                    <td><input type="number" placeholder="Coxa Distal Esquerda"></td>
+                    <td><input id="coxadd" type="number" placeholder="Coxa Distal Esquerda"></td>
                 </tr>
                 <tr>
                     <th>Coxa Distal Esquerda</th>
-                    <td><input type="number" placeholder="Coxa Distal Esquerda"></td>
+                    <td><input id="coxade" type="number" placeholder="Coxa Distal Esquerda"></td>
                 </tr>
                 <tr>
                     <th>Panturrilha Direita</th>
-                    <td><input type="number" placeholder="Panturrilha Direita"></td>
+                    <td><input id="panturrilhad" type="number" placeholder="Panturrilha Direita"></td>
                 </tr>
                 <tr>
                     <th>Panturrilha Esquerda</th>
-                    <td><input type="number" placeholder="Panturrilha Esquerda"></td>
+                    <td><input id="panturrilhae" type="number" placeholder="Panturrilha Esquerda"></td>
                 </tr>
             </thead>
         </table>
@@ -426,16 +428,20 @@
             </tr>
             <tr>
                 <th>Alimentação</th>
-                <td><input type="text" placeholder="Vegetariano, Como bem,..."></td>
-                <th>Quantas refeições?
-                    <select>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                    </select>
+                <td><input type="text" placeholder="Vegetariano, Como bem,...">
+                </td>
+            </tr>
+                <th>Quantas refeições?</th>
+                    <td>
+                        <select>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                        </select>
+                    </td>
                 </th>
             </tr>
             <tr>

@@ -1,101 +1,186 @@
-html{
+html {
     font-family:Arial, Helvetica, sans-serif;
-    background-color: rgb(247, 247, 247);
+    background-color: rgb(15, 15, 15);
     width: 100%;
     height: 100%;
     margin: 0%;
-    padding: 0%;
+    padding: 0%
+}
+
+body p, input{
+    background-color: transparent;
+    border: none;
+    color: white;
+}
+
+.info-person input{
+    padding: 20px;
+    border: 1px solid;
+    border-top: 1px;
+    border-color: #bd2c00;
+    border-radius: 10px;
 }
 
 header ul{
     display: flex;
     align-items: center;
     justify-content: space-around;
-    background-image: linear-gradient(135deg, rgb(239, 255, 92) 40%, rgb(255, 86, 86))
+    background-color: beige;
+    border-radius: 50px
 }
 
 .info-person {
     padding-bottom: 10px;
+    color: white;
 }
 
 .info-person input {
     padding: 5px;
     margin: 3px;
 }
-
+/*IMC*/
 #imc-table {
-    background-color: aliceblue;
+    background-color: rgb(15, 15, 15);
     text-align: center;
     margin-bottom: 15px;
+    color: white
 }
 
 #imc-table th {
     padding: 10px;
-    background-color: rgb(255, 136, 0);
+    background-color: #bd2c00;
+    border-radius: 10px
 }
 
-#barra {
-    background-color: black
+#imc-table td{
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgb(61,61,61)
 }
 
+#imc-table progress{
+    background-color: #bd2c00;
+}
+
+/*BODY FAT*/
 #body-fat {
-    background-color: aliceblue;
+    background-color: rgb(15, 15, 15);
     text-align: center;
     margin-bottom: 15px;
     border: 0px;
+    color: white
 }
 
 #body-fat th {
     padding: 10px;
-    background-color: rgb(255, 217, 0);
+    background-color: #bd2c00;
+    border-radius: 10px
 }
 
+#body-fat td{
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgb(61,61,61)
+}
+
+/*BODY MUSCLE*/
 #muscle-table {
-    background-color: aliceblue;
+    background-color: rgb(15, 15, 15);
     text-align: center;
     margin-bottom: 15px;
     border: 0px;
+    color:white
 }
 
 #muscle-table th {
     padding: 10px;
-    background-color: rgb(123, 255, 0);
+    background-color: #bd2c00;
+    border-radius: 10px
 }
 
+#muscle-table td{
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgb(61,61,61)
+}
+
+/*VISCERAL FAT*/
 #visceral-fat-table {
-    background-color: aliceblue;
+    background-color: rgb(15, 15, 15);
     text-align: center;
     margin-bottom: 15px;
     border: 0px;
+    color: white;
 }
 
 #visceral-fat-table th{
     padding: 10px;
-    background-color: rgb(99, 162, 255);
+    background-color: #bd2c00;
+    border-radius: 10px
 }
 
+#visceral-fat-table td{
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgb(61,61,61);
+}
+
+/*TAXA METABÓLICA E IDADE BIOLÓGICA*/
 #RM {
-    background-color: aliceblue;
+    background-color: rgb(15, 15, 15);
     text-align: center;
     margin-bottom: 15px;
     border: 0px;
+    color: white;
 }
 
 #RM th{
     padding: 10px;
-    background-color: aquamarine;
+    background-color: #bd2c00;
+    border-radius: 10px
 }
 
+#RM td{
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgb(61,61,61);
+}
+
+/*PERIMETRÍA*/
 .perimetria{
     margin-bottom: 25px;
+    color: white;
 }
 
 .perimetria th{
     padding: 10px;
-    background-color: rgb(212, 85, 0);
+    background-color: #bd2c00;
+    border-radius: 10px
+}
+
+.perimetria td{
+    background-color: rgb(61,61,61);
+    border-radius: 10px;
+    padding: 10px
+
+}
+
+#container3D {
+    display: flexbox;
+
+}
+
+table {
+  margin-top: 20px;
+}
+
+input {
+  width: 80px;
 }
 
 .info-add {
+    color: white;
+    background-color: rgb(61,61,61);
     text-align: right;
 }
 
@@ -123,4 +208,10 @@ footer button{
     background-color: rgb(53, 167, 53);
     color: white;
     font-style: bold;
+}
+
+.info-add{
+    border: 1.5px solid;
+    border-radius: 20px;
+    padding: 20px;
 }
